@@ -38,9 +38,9 @@ export class DocumentsComponent implements OnInit {
 
   ngOnInit() {
     this.dataLoading = true;
-    this.documents = [];
-    this.properties = [];
     this.documentService.getDocumentList('547039586626').on('value', (snapshot) => {
+      this.documents = [];
+      this.properties = [];
       const json = snapshot.toJSON();
       if (json) {
         Object.keys(json).forEach((key) => {
