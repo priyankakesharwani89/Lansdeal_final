@@ -1,0 +1,37 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="form-group">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Amount" [(ngModel)]="amount">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Payee VPA (pa):" [(ngModel)]="pa" />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Payee Name (pn):" [(ngModel)]="pn" />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Txn Note (tn):" [(ngModel)]="tn" />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Payee VPA (pa):" [(ngModel)]="url" value="https://teztytreats.com/demo"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-10 no-padding">
+          <button type="submit" class="btn btn-info" *ngIf="!showOTP" (click)="onBuyClicked()">Send OTP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

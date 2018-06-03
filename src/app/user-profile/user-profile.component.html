@@ -1,0 +1,74 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <mat-spinner *ngIf="!user"></mat-spinner>
+                <div class="card" *ngIf="user">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Aadhaar Profile</h4>
+                    </div>
+                    <div class="card-body col-md-12">
+
+                        <table class="table">
+                            <tr role="listitem">
+                                <td><b>Adhaar Number:</b></td>
+                                <td>{{user.uid}}</td>
+                            </tr>
+                            <tr role="listitem">
+                                <td><b>Name:</b></td>
+                                <td>{{user.name}}</td>
+                            </tr>
+                            <tr role="listitem">
+                                <td><b>Gender</b></td>
+                                <td>{{user.gender}}</td>
+                            </tr>
+                            <tr role="listitem">
+                                <td><b>Date of Birth:</b></td>
+                                <td>{{user.date_of_birth}}</td>
+                            </tr>
+                            <tr role="listitem">
+                                <td><b>Email Id:</b></td>
+                                <td>{{user.email}}</td>
+                            </tr>
+                            <tr role="listitem">
+                                <td><b>Phone/Mobile Number:</b></td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr role="listitem">
+                                <td><b>Address:</b></td>
+                                <td>{{user.address.house}} {{user.address.street}} {{user.address.locality}} {{user.address.locality}} {{user.address.village_town_or_city}}</td>
+                            </tr>
+                            <tr role="listitem">
+                                <td><b>City:</b></td>
+                                <td>{{user.address.district}}</td>
+                            </tr>
+                            <tr role="listitem">
+                                <td><b>State:</b></td>
+                                <td>{{user.address.state}}</td>
+                            </tr>
+                            <tr role="listitem">
+                                <td><b>Postal Code:</b></td>
+                                <td>{{user.address.pincode}}</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" >
+                <div class="card card-profile"  *ngIf="user">
+                    <div class="card-avatar">
+                        <a href="#pablo">
+                            <img class="img" [src]="domSanitizer.bypassSecurityTrustUrl(user.photo)" />
+                        </a>
+                    </div>
+                    <div class="card-body" >
+                        <h4 class="card-title">{{user.name}}</h4>
+                        <p class="card-description">Adhaar Number: {{user.uid}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

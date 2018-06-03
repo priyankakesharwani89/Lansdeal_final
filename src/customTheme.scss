@@ -1,0 +1,35 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$lansdeal-blue: #4751b2;
+$lansdeal-white: #ffffff;
+$primary: mat-palette($mat-blue, 700);
+$accent: mat-palette($mat-orange, 200);
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);
+.mat-toolbar {
+  background-color: mat-color($primary);
+  border-color: mat-color($accent, A400);
+  color: $lansdeal-white;
+  .mat-icon.mat-primary {
+    color: $lansdeal-white;
+  }
+}
+
+.mat-spinner {
+  position: absolute !important;
+    width: 100px !important;
+    height: 100px !important;
+    top: 10px;
+    left: 50%;
+    margin-left: -50px;
+}
+
+@media(max-width:640px) {
+  .hidden-xs {
+    display: none;
+  }
+}
+
+.card .card-header-danger .card-icon, .card .card-header-danger .card-text, .card .card-header-danger:not(.card-header-icon):not(.card-header-text), .card.bg-danger, .card.card-rotate.bg-danger .front, .card.card-rotate.bg-danger .back {
+  background: linear-gradient(60deg, $lansdeal-blue, $lansdeal-blue) !important;
+}

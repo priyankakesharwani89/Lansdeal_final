@@ -1,0 +1,93 @@
+.example-card {
+  max-width: 500px;
+  margin: 200px auto 20px;
+}
+
+.center {
+
+  display: flex;
+justify-content: center;
+}
+.register-body {
+  margin-left:200px;
+  width: 500px;
+  padding: 20px;
+}
+
+#customBtn {
+  display: inline-block;
+  background-color: #006FBC; 
+  color: #fff;
+  width: 190px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+#customBtn:hover {
+  cursor: pointer;
+}
+span.label {
+  font-family: serif;
+  font-weight: normal;
+}
+span.icon {
+  background: url('/assets/images/g-normal.png') transparent 5px 50% no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  width: 42px;
+  height: 42px;
+}
+span.buttonText {
+  display: inline-block;
+  vertical-align: middle; 
+  font-size: 14px;
+  font-weight: bold;
+  /* Use the Roboto font that is loaded in the <head> */
+  font-family: 'Roboto', sans-serif;
+}
+@import '../../customTheme';
+.no-padding {
+padding: 0;
+}
+
+.spinner { 
+top: 15%;
+}
+
+.welcome-image {
+margin-top: 45px;
+.bitmap {
+  width: 100%;
+  object-fit: contain;
+}
+}
+
+.register-content {
+width: 70%;
+margin: 0 auto;
+margin-top: 183px;
+.logo-big {
+  width: 55px;
+  height: 63px;
+  object-fit: contain;
+}
+.lansdeal {
+  margin-left: 15px;
+  width: 183px;
+  height: 42px;
+  object-fit: contain;
+}
+.register-text {
+  margin-left: 20px;
+  margin-left: 62px;
+}
+}
+
+@media(max-width:640px) {
+.register-content {
+  margin-top: 50px;
+}
+.welcome-image {
+  margin-top: 0px;
+
+}
+}

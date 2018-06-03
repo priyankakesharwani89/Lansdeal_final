@@ -1,0 +1,59 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-xs-12 no-padding">
+        <div class="welcome-image">
+          <img src="/assets/img/welcome-image.png" srcset="/assets/img/bitmap@2x.png 2x,
+             /assets/img/bitmap@3x.png 3x" class="bitmap">
+
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <mat-spinner class="spinner" *ngIf="isLogging"></mat-spinner>
+        <div class="register-content" *ngIf="!isLogging">
+          <div class="header"  *ngIf="!dataLoading">
+            <img src="/assets/img/logo-big.png" srcset="/assets/img/logo-big@2x.png 2x,
+                /assets/img/logo-big@3x.png 3x" class="logo-big">
+            <img src="/assets/img/lansdeal.png" srcset="/assets/img/lansdeal@2x.png 2x,
+                /assets/img/lansdeal@3x.png 3x" class="lansdeal">
+            <p class="register-text">Link your Aadhaar Card here.</p>
+
+          </div>
+          <div class="">
+            <mat-spinner class="spinner" *ngIf="dataLoading"></mat-spinner>
+            <form #loginForm="ngForm" *ngIf="!dataLoading">
+              <div class="row ">
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Adhaar Number" #aadhaarid id="aadharnumber" placeholder=" Enter 12-digit aadhaar number" required
+                      minlength="12" maxlength="12" [(ngModel)]="aadharNumber" name="aadharid">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-12" *ngIf="showOTP">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="OTP" #otp id="aadharOTP" placeholder="Enter OTP" [(ngModel)]="aadharOTP" required minlength="6"
+                      maxlength="6" name="aadharOTP">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-md-10 no-padding">
+                <button class="btn btn-info" type="submit" *ngIf="!showOTP" (click)="sendOTP(aadhaarid.value, loginForm)">
+                  Sent OTP
+
+                </button>
+                <button class="btn btn-info" type="submit" *ngIf="showOTP" (click)="verifyOTP(loginForm)">Verify OTP</button>
+                <!-- (click)="open(content)" -->
+                <button class="btn btn-info" type="submit" *ngIf="showOTP" (click)="sendOTP(aadhar, loginForm)">Resend
+                </button>
+                <button class="btn btn-info" type="submit" *ngIf="showOTP" (click)="OnClear()">
+                  Clear All</button>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

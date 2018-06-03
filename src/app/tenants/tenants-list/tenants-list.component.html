@@ -1,0 +1,66 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 top-button">
+        <mat-spinner *ngIf="dataLoading"></mat-spinner>
+        <button type="submit" *ngIf="!dataLoading" class="btn btn-info" (click)="addNewTenant()">Add a new tenant</button>
+      </div>
+      <div class="col-md-2" >
+        </div>
+      <div class="col-md-8">
+
+        <div class="alert alert-danger" *ngIf="!dataLoading && tenants.length === 0">
+           
+          <span>
+            <b> No tenants are present.</b>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-12" *ngIf="!dataLoading && tenants.length  > 0">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Tenants</h4>
+            <p class="card-category">List of registered tenants.</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>
+                    Tenant id
+                  </th>
+                  <th>
+                    Aadhaar Number
+                  </th>
+                  <th>
+                    Staying Since
+                  </th>
+                  <th>
+                    Staying Till
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let tenant of tenants">
+                    <td>
+                      {{tenant.tenantId}}
+                    </td>
+                    <td>
+                      {{tenant.aadhaarNumber}}
+                    </td>
+                    <td>
+                      {{tenant.startDate| date}}
+                    </td>
+                    <td>
+                      {{tenant.endDate| date}}
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <mat-vertical-stepper linear>
+          <mat-step [stepControl]="formGroup1">
+            <ng-template matStepLabel>Identification</ng-template>
+            <form [formGroup]="identification">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Sales Deed Number" formControlName="salesDeedNumber">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Coneyance Deed Number" formControlName="conveyanceDeedNumber">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Stamp Duty Number" formControlName="stampDutyNumber">
+              </mat-form-field>
+
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="address">
+            <ng-template matStepLabel>Address</ng-template>
+            <form [formGroup]="address">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Address" formControlName="address">
+              </mat-form-field>
+
+              <label>Rural/Urban</label>
+              <mat-radio-group>
+                <mat-radio-button value="urban">Urban</mat-radio-button>
+                <mat-radio-button value="rural">Rural</mat-radio-button>
+              </mat-radio-group>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Khasra Number" formControlName="khasraNumber">
+              </mat-form-field>
+
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="sale">
+            <ng-template matStepLabel>Sale</ng-template>
+            <form [formGroup]="sale">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Last Owner Adhaar Number" formControlName="lastOwnerAdhaarCard">
+              </mat-form-field>
+              <div>
+                <label>Tenant available</label>
+                <div>
+                  <mat-radio-group formControlName="tenantAvailable">
+                    <mat-radio-button value="true">Yes</mat-radio-button>
+                    <mat-radio-button value="false">No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+              <div>
+                <label>Sale Type</label>
+                <div>
+                  <mat-radio-group formControlName="saleType">
+                    <mat-radio-button value="sale">Sale</mat-radio-button>
+                    <mat-radio-button value="lease">Lease</mat-radio-button>
+                    <mat-radio-button value="rent">Rent</mat-radio-button>
+                    <mat-radio-button value="mortgage">Rent</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </form>
+            <div>
+              <button type="button" class="btn btn-info" (click)="submit()">Submit</button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-xs-12 no-padding">
+        <div class="welcome-image">
+          <img src="/assets/img/welcome-image.png" srcset="/assets/img/bitmap@2x.png 2x,
+           /assets/img/bitmap@3x.png 3x" class="bitmap">
+
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <mat-spinner class="spinner" *ngIf="isLogging"></mat-spinner>
+        <div class="register-content" *ngIf="!isLogging">
+          <div class="header">
+              <img src="/assets/img/logo-big.png"
+              srcset="/assets/img/logo-big@2x.png 2x,
+              /assets/img/logo-big@3x.png 3x"
+              class="logo-big">
+              <img src="/assets/img/lansdeal.png"
+              srcset="/assets/img/lansdeal@2x.png 2x,
+              /assets/img/lansdeal@3x.png 3x"
+              class="lansdeal">
+              <p class="register-text">Login or register here.</p>
+
+          </div>
+          <div class="register-body col-md-6 col-sm-12 col-xs-12">
+            <div id="customBtn" class="customGPlusSignIn" (click)="login()">
+              <span class="icon"></span>
+                <span class="buttonText">Sign in with Google</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
