@@ -64,7 +64,8 @@ export class DocumentsComponent implements OnInit {
     this.document = this.fb.group({
       propertyId: [''],
       file: '',
-      fileType: ''
+      fileType: '',
+      eSigned: ['']
     })
 
   }
@@ -110,15 +111,18 @@ export class DocumentsComponent implements OnInit {
     file.canRetry = false;
   }
   submit() {
+    this.document.controls.eSigned.setValue(false);
     this.uploadFile(this.document.controls.file.value);
   }
   uploadFile(file) {
     this.documentService.uploadInFirebase('547039586626', this.document.value).then((response) => {
       this.router.navigate(['documents']);
-    })
-    //  this.documentService.uploadFile(file).subscribe((response) => {
-    //    console.log(response);
-    //  });
+    });
+  }
+  eSign(document: Document){
+    this.documentService.uploadFile(document).subscribe((response) => {
+       document.eSigned =  true;
+    });
   }
   private removeFileFromArray(file: FileUploadModel) {
     const index = this.files.indexOf(file);

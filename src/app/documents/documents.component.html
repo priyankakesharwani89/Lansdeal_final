@@ -40,7 +40,7 @@
                 </li>
               </ul>
               <input type="file" id="fileUpload" name="fileUpload" accept="{{accept}}" style="display:none;" />
-              <button type="button" class="btn btn-info" (click)="submit()">eSign</button>
+              <button type="button" class="btn btn-info" (click)="submit()">Submit</button>
 
             </form>
 
@@ -77,7 +77,10 @@
 
                 </th>
                 <th>
-                  Link
+                  Downloads
+                </th>
+                <th>
+                  ESigned
                 </th>
               </thead>
               <tbody>
@@ -90,6 +93,11 @@
                   </td>
                   <td>
                     <img [src]="getImageLink(document.fileType)" />
+                  </td>
+                  <td>
+                    <img [src]="getImageLink(document.fileType)"  *ngIf="document.eSigned === true"/>
+                    <button type="button" class="btn btn-info" (click)="eSign()"  *ngIf="document.eSigned === false">eSign</button> 
+              
                   </td>
                 </tr>
 
