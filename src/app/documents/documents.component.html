@@ -95,7 +95,8 @@
                     <img [src]="getImageLink(document.fileType)" />
                   </td>
                   <td>
-                    <img [src]="getImageLink(document.fileType)"  *ngIf="document.eSigned === true"/>
+                    <img src="/assets/img/eSign.png"  class="e-sign" *ngIf="document.eSigned === true"/>
+                    <span *ngIf="document.eSigned === true">eSigned</span>
                     <button type="button" class="btn btn-info" (click)="eSign(document)"  *ngIf="document.eSigned === false">eSign</button> 
               
                   </td>
