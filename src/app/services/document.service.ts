@@ -5,7 +5,7 @@ import { Document } from 'models/document';
 
 @Injectable()
 export class DocumentService {
-  fileUploadUrl = 'https://ext.digio.in:444/v2/client/document/upload';
+  fileUploadUrl = 'https://api.digio.in/v2/client/document/uploadpdf';
   constructor(private http: HttpClient, private db: AngularFireDatabase) { }
 
   documents: Document[];
