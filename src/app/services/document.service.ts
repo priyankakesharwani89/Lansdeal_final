@@ -39,9 +39,9 @@ export class DocumentService {
     };
     return this.db.list(this.documentDataDbPath + '/' + aadhaarNumber).push(document);
   }
-  uploadFile(document) {
+  uploadFile(document: Document) {
 
-    const authorization = btoa('AIWSZ62Y2LYPJV75Z3MKLH2KRNJ9WZQN:B75C5W21NB16NBDYOXSX3A61MYWVVDWN');
+    const authorization = 'Basic AIWSZ62Y2LYPJV75Z3MKLH2KRNJ9WZQN:B75C5W21NB16NBDYOXSX3A61MYWVVDWN';
     return this.http.post(this.fileUploadUrl,
       {
         "signers": [{
@@ -52,11 +52,12 @@ export class DocumentService {
         "expire_in_days": 10,
         "display_on_page": "all",
         "file_name": "test.pdf",
-        "file_data": document.value.file
+        "file_data": document.file
       }
       ,
       {
-        headers: { 'authorization': authorization, 'content-type': 'multipart/form-data' }
+        headers: {
+          "Authorization": "Basic " + btoa('AIWSZ62Y2LYPJV75Z3MKLH2KRNJ9WZQN' + ":" + 'B75C5W21NB16NBDYOXSX3A61MYWVVDWN'), 'content-type': 'application/json' }
       })
   }
 }

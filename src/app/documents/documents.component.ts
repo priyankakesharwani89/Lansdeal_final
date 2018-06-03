@@ -119,7 +119,7 @@ export class DocumentsComponent implements OnInit {
       this.router.navigate(['documents']);
     });
   }
-  eSign(document: Document){
+  eSign(document){
     this.documentService.uploadFile(document).subscribe((response) => {
        document.eSigned =  true;
     });

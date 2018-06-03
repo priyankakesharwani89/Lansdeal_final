@@ -96,7 +96,7 @@
                   </td>
                   <td>
                     <img [src]="getImageLink(document.fileType)"  *ngIf="document.eSigned === true"/>
-                    <button type="button" class="btn btn-info" (click)="eSign()"  *ngIf="document.eSigned === false">eSign</button> 
+                    <button type="button" class="btn btn-info" (click)="eSign(document)"  *ngIf="document.eSigned === false">eSign</button> 
               
                   </td>
                 </tr>
